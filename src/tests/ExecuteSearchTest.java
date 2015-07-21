@@ -31,6 +31,7 @@ public class ExecuteSearchTest {
 		
 		driver = new FirefoxDriver();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.get("https://google.com/");
 		
 	}
 

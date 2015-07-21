@@ -20,51 +20,46 @@ public class LoginPage {
 	By passwordInputFieldLocator = By.id("Passwd");
 	By signInButtonLocator = By.id("signIn");
 	By signInWithADifferentAccountLinkLocator = By.linkText(" Sign in with a different account ");
-	
+	By reAuthEmailLocator = By.id("reauthEmail");
 	
 	public WebElement usernameInputBox(WebDriver driver){
-		element = driver.findElement(emailInputBoxLocator);
-		return element;
+		return driver.findElement(emailInputBoxLocator);		
 	}
 	
 	public WebElement nextButton(WebDriver driver){
-		element = driver.findElement(nextEmailButtonLocator);
-		return element;
+		return driver.findElement(nextEmailButtonLocator);		
 	}
 	
 	public WebElement emailAlertMessage(WebDriver driver){
-		element = driver.findElement(emailInputBoxLocator);
-		return element;
+		return driver.findElement(emailInputBoxLocator);		
 	}
 	
 	public WebElement backArrowButton(WebDriver driver){
-		element = driver.findElement(backArrowButtonLocator);
-		return element;
+		return driver.findElement(backArrowButtonLocator);		
 	}
 	
 	public WebElement perstistentCookieCheckbox(WebDriver driver){
-		element = driver.findElement(persistentCookieCheckboxLocactor);
-		return element;
+		return driver.findElement(persistentCookieCheckboxLocactor);		
 	}
 	
 	public WebElement forgotPasswordLink(WebDriver driver){
-		element = driver.findElement(forgotPasswordLinkLocator);
-		return element;
+		return driver.findElement(forgotPasswordLinkLocator);		
 	}
 	
 	public WebElement passwordInputField(WebDriver driver){
-		element = driver.findElement(passwordInputFieldLocator);
-		return element;
+		return driver.findElement(passwordInputFieldLocator);		
 	}
 	
 	public WebElement signInButton(WebDriver driver){
-		element = driver.findElement(signInButtonLocator);
-		return element;
+		return driver.findElement(signInButtonLocator);		
 	}
 	
 	public WebElement signInWithADifferentAccountLink(WebDriver driver){
-		element = driver.findElement(signInWithADifferentAccountLinkLocator);
-		return element;
+		return driver.findElement(signInWithADifferentAccountLinkLocator);	
+	}
+	
+	public WebElement reAuthEmail(WebDriver driver){
+		return driver.findElement(reAuthEmailLocator);
 	}
 	
 	
@@ -99,5 +94,9 @@ public class LoginPage {
 	
 	public void clickSignInWithADifferentAccountLink(){
 		signInWithADifferentAccountLink(driver).click();
+	}
+	
+	public void enterUsername(String username){
+		usernameInputBox(driver).sendKeys(username);
 	}
 }

@@ -1,18 +1,23 @@
 package pages;
 
+import org.apache.log4j.Logger;
+import org.apache.log4j.xml.DOMConfigurator;
 import org.openqa.selenium.*;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class HomePage {
 	
-	private WebDriver driver;
-	private WebElement element = null;
+	public WebDriver driver;
+	public WebElement element;
+	private static Logger Log = Logger.getLogger(HomePage.class.getName());
 
 	public HomePage(WebDriver driver){
 		this.driver = driver;
 	}
-
 	
-	 By signInButtonLocator = By.linkText("Sign in");
+	
+	
+	 By signInButtonLocator = By.id("gb_70");
 	 By gmailButtonLocator = By.linkText("Gmail");
 	 By searchButtonLocator = By.name("btnk");
 	 By luckyButtonLocator = By.name("test");
@@ -33,13 +38,13 @@ public class HomePage {
 	  * Button locating methods 
 	  */
 	
-	public WebElement signInButton(WebDriver driver){
-		
-		return driver.findElement(signInButtonLocator);
-		
+	public WebElement signInButton(){
+			
+			element = driver.findElement(signInButtonLocator);	
+			return element;
 	}
 	
-	public WebElement gmailButton(WebDriver driver){
+	public WebElement gmailButton(){
 		
 		return driver.findElement(gmailButtonLocator);
 		
@@ -135,10 +140,25 @@ public class HomePage {
     	return verifySearchField(driver).getText();
     }
     
+    public void clickSignInHomePage(){
+    	signInButton().click();
+    	System.out.println("driver=" + driver); 
+    }
+    
+    public String getHomePageTitle(WebDriver driver){
+    	System.out.println(driver.getTitle());
+    	return driver.getTitle();
+    	
+    }
+    
+    public void clickGmailButton(){
+    	
+    	gmailButton().click();
+    }
     
     
     
-    
+  
     
     
     

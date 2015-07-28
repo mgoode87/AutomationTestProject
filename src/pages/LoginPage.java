@@ -4,8 +4,8 @@ import org.openqa.selenium.*;
 
 public class LoginPage {
 	
-	private WebElement element = null;
-	private WebDriver driver = null;
+	public WebElement element = null;
+	public WebDriver driver = null;
 	
 	public LoginPage(WebDriver driver){
 		this.driver = driver;
@@ -99,4 +99,9 @@ public class LoginPage {
 	public void enterUsername(String username){
 		usernameInputBox(driver).sendKeys(username);
 	}
+	
+	public String getLoginPageTitle(){
+		return driver.getTitle();
+	}
+	    
 }

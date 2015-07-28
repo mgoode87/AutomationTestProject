@@ -15,27 +15,18 @@ public class LoginTest {
 	public WebDriver driver;
 	public LoginPage loginPage;
 	public HomePage homePage;
-	public String userName = "timeywimeyDoctor10@gmail.com";
+	public String userName = "timeywimeywho10@gmail.com";
 	public String passWord = "password";
 	public String homePageTitle = "Google";
 	public String loginPageTitle = "Sign in - Google Accounts";
 	public String url = "http://www.google.com";
 	
   
- 
-  
-  
-  @Test
+  @Test (dependsOnMethods = { "VerifyHomePageLoads" })
   public void LoginTest() {
 	  
 	  homePage = new HomePage(driver);
-	  driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-	  Assert.assertEquals(homePage.getHomePageTitle(driver), homePageTitle);
-	  //TODO Verify you are on http://www.google.com
-	  
-	  //driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-	  //Assert.assertEquals(homePage.getHomePageTitle(driver), homePageTitle);
-	  //Assert.assertEquals(driver.getTitle(), homePageTitle);
+	 
 	  driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 	  System.out.println("driver=" + driver); 
 	  homePage.clickSignInHomePage();
@@ -45,12 +36,24 @@ public class LoginTest {
 	  Assert.assertEquals(loginPage.getLoginPageTitle(), loginPageTitle);
 	  
 	  loginPage.enterUsername(userName);
+	  loginPage.clickNextButton();
+	  
+	  driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+	  
 	  loginPage.enterPassword(passWord);
 	  loginPage.clickSignInButton();
  
 	  driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-	  Assert.assertEquals(driver.getTitle(), "Google");
+	  Assert.assertEquals(driver.getTitle(), loginPageTitle);
 	  
+  }
+  
+  
+  @Test
+  public void VerifyHomePageLoads(){
+	  homePage = new HomePage(driver);
+	  driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+	  Assert.assertEquals(homePage.getHomePageTitle(driver), homePageTitle);
   }
   
  

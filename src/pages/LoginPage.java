@@ -26,7 +26,7 @@ public class LoginPage {
 		return driver.findElement(emailInputBoxLocator);		
 	}
 	
-	public WebElement nextButton(WebDriver driver){
+	public WebElement nextButton(){
 		return driver.findElement(nextEmailButtonLocator);		
 	}
 	
@@ -73,7 +73,7 @@ public class LoginPage {
 	}
 	
 	public void clickNextButton(){
-		nextButton(driver).click();
+		nextButton().click();
 	}
 	
 	public void clickPerstistentCookieCheckbox(){

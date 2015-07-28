@@ -101,7 +101,7 @@
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
                         <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="tests.LoginTest" hash-for-method="LoginTest">LoginTest</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="tests.ExecuteSearchTest" hash-for-method="ExecuteSearch">ExecuteSearch</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
@@ -119,23 +119,21 @@
           <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">tests.LoginTest</span>
+              <span class="class-name">tests.ExecuteSearchTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="LoginTest">
-                  </a> <!-- LoginTest -->
-                  <span class="method-name">LoginTest</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;Passwd&quot;}
-Command duration or timeout: 30.05 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+                  <a name="ExecuteSearch">
+                  </a> <!-- ExecuteSearch -->
+                  <span class="method-name">ExecuteSearch</span>
+                  <div class="stack-trace">org.openqa.selenium.InvalidElementStateException: Element is disabled and so may not be used for actions
+Command duration or timeout: 10.05 seconds
 Build info: version: &apos;2.46.0&apos;, revision: &apos;87c69e2&apos;, time: &apos;2015-06-04 16:17:10&apos;
 System info: host: &apos;MacBook-Pro.local&apos;, ip: &apos;192.168.3.103&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.10.4&apos;, java.version: &apos;1.8.0_45&apos;
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
 Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=39.0, platform=MAC, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: 120cb002-e05d-ca4c-9c81-0f9c4c0f517b
-*** Element info: {Using=id, value=Passwd}
+Session ID: f89fc0b5-98fc-2d48-8f3f-22882b6c84b6
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -143,13 +141,10 @@ Session ID: 120cb002-e05d-ca4c-9c81-0f9c4c0f517b
 	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
 	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:399)
-	at org.openqa.selenium.By$ById.findElement(By.java:215)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at pages.LoginPage.passwordInputField(LoginPage.java:50)
-	at pages.LoginPage.enterPassword(LoginPage.java:88)
-	at tests.LoginTest.LoginTest(LoginTest.java:48)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:269)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:90)
+	at pages.HomePage.enterSearch(HomePage.java:125)
+	at tests.ExecuteSearchTest.ExecuteSearch(ExecuteSearchTest.java:24)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -174,13 +169,14 @@ Session ID: 120cb002-e05d-ca4c-9c81-0f9c4c0f517b
 	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;Passwd&quot;}
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Caused by: org.openqa.selenium.InvalidElementStateException: Element is disabled and so may not be used for actions
 Build info: version: &apos;2.46.0&apos;, revision: &apos;87c69e2&apos;, time: &apos;2015-06-04 16:17:10&apos;
 System info: host: &apos;MacBook-Pro.local&apos;, ip: &apos;192.168.3.103&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.10.4&apos;, java.version: &apos;1.8.0_45&apos;
 Driver info: driver.version: unknown
-	at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElementInternal_(file:///var/folders/g5/gc7z5nss61v6yqxls_lr1k9h0000gp/T/anonymous1492271720873335763webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10299)
-	at &lt;anonymous class&gt;.fxdriver.Timer.prototype.setTimeout/&lt;.notify(file:///var/folders/g5/gc7z5nss61v6yqxls_lr1k9h0000gp/T/anonymous1492271720873335763webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:603)
+	at &lt;anonymous class&gt;.fxdriver.preconditions.enabled(file:///var/folders/g5/gc7z5nss61v6yqxls_lr1k9h0000gp/T/anonymous4250020920594766618webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:9621)
+	at &lt;anonymous class&gt;.DelayedCommand.prototype.checkPreconditions_(file:///var/folders/g5/gc7z5nss61v6yqxls_lr1k9h0000gp/T/anonymous4250020920594766618webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12265)
+	at &lt;anonymous class&gt;.DelayedCommand.prototype.executeInternal_/h(file:///var/folders/g5/gc7z5nss61v6yqxls_lr1k9h0000gp/T/anonymous4250020920594766618webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12282)
+	at &lt;anonymous class&gt;.fxdriver.Timer.prototype.setTimeout/&lt;.notify(file:///var/folders/g5/gc7z5nss61v6yqxls_lr1k9h0000gp/T/anonymous4250020920594766618webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:603)
 
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
@@ -190,7 +186,7 @@ Driver info: driver.version: unknown
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/private/var/folders/g5/gc7z5nss61v6yqxls_lr1k9h0000gp/T/testng-eclipse--705151219/testng-customsuite.xml</span>
+            <span class="header-content">/private/var/folders/g5/gc7z5nss61v6yqxls_lr1k9h0000gp/T/testng-eclipse--1732062323/testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -199,7 +195,7 @@ Driver info: driver.version: unknown
 &lt;suite name=&quot;Default suite&quot;&gt;
   &lt;test verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;tests.LoginTest&quot;/&gt;
+      &lt;class name=&quot;tests.ExecuteSearchTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -241,14 +237,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'LoginTest')
-data.setCell(0, 2, 'tests.LoginTest')
-data.setCell(0, 3, 30673);
+data.setCell(0, 1, 'ExecuteSearch')
+data.setCell(0, 2, 'tests.ExecuteSearchTest')
+data.setCell(0, 3, 10106);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 30 seconds</span>
+              <span class="suite-total-time">Total running time: 10 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -274,7 +270,7 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">tests.LoginTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">tests.ExecuteSearchTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod</span>
                 <span class="method-start">0 ms</span>
@@ -282,12 +278,12 @@ return data;
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">LoginTest</span>
-                <span class="method-start">2232 ms</span>
+                <span class="method-name">ExecuteSearch</span>
+                <span class="method-start">2213 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod</span>
-                <span class="method-start">32909 ms</span>
+                <span class="method-start">12322 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

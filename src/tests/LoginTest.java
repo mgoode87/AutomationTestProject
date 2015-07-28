@@ -13,8 +13,8 @@ import pages.*;
 
 public class LoginTest {
 	public WebDriver driver;
-	public LoginPage loginPage = new LoginPage(driver);
-	public HomePage homePage = new HomePage(driver);
+	public LoginPage loginPage;
+	public HomePage homePage;
 	public String userName = "timeywimeyDoctor10@gmail.com";
 	public String passWord = "password";
 	public String homePageTitle = "Google";
@@ -28,6 +28,7 @@ public class LoginTest {
   @Test
   public void LoginTest() {
 	  
+	  homePage = new HomePage(driver);
 	  driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 	  Assert.assertEquals(homePage.getHomePageTitle(driver), homePageTitle);
 	  //TODO Verify you are on http://www.google.com
@@ -39,6 +40,7 @@ public class LoginTest {
 	  System.out.println("driver=" + driver); 
 	  homePage.clickSignInHomePage();
 	  
+	  loginPage = new LoginPage(driver);
 	  driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 	  Assert.assertEquals(loginPage.getLoginPageTitle(), loginPageTitle);
 	  

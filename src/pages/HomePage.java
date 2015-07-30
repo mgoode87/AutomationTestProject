@@ -142,11 +142,9 @@ public class HomePage {
     
     public void clickSignInHomePage(){
     	signInButton().click();
-    	System.out.println("driver=" + driver); 
     }
     
     public String getHomePageTitle(WebDriver driver){
-    	System.out.println(driver.getTitle());
     	return driver.getTitle();
     	
     }

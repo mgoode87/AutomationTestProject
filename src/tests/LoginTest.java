@@ -44,7 +44,7 @@ public class LoginTest {
 	  loginPage.clickSignInButton();
  
 	  driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-	  Assert.assertEquals(driver.getTitle(), loginPageTitle);
+	  Assert.assertEquals(driver.getTitle(), homePageTitle);
 	  
   }
   

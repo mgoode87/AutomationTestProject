@@ -18,6 +18,7 @@ public class LoginPage {
 	By persistentCookieCheckboxLocactor = By.id("PersistentCookie");
 	By forgotPasswordLinkLocator = By.id("link-forgot-passwd");
 	By passwordInputFieldLocator = By.id("Passwd");
+	By passwordInputLocatorXpath = By.xpath("/html/body/div[1]/div[2]/div[2]/div[1]/form/div[2]/div/div[2]/div/div/input[2]");
 	By signInButtonLocator = By.id("signIn");
 	By signInWithADifferentAccountLinkLocator = By.linkText(" Sign in with a different account ");
 	By reAuthEmailLocator = By.id("reauthEmail");
@@ -47,7 +48,8 @@ public class LoginPage {
 	}
 	
 	public WebElement passwordInputField(WebDriver driver){
-		return driver.findElement(passwordInputFieldLocator);		
+		//return driver.findElement(passwordInputFieldLocator);
+		return driver.findElement(passwordInputLocatorXpath);
 	}
 	
 	public WebElement signInButton(WebDriver driver){

@@ -16,7 +16,7 @@ public class LoginTest {
 	public LoginPage loginPage;
 	public HomePage homePage;
 	public String userName = "timeywimeywho10@gmail.com";
-	public String passWord = "password";
+	public String passWord = "fish1122";
 	public String homePageTitle = "Google";
 	public String loginPageTitle = "Sign in - Google Accounts";
 	public String url = "http://www.google.com";
